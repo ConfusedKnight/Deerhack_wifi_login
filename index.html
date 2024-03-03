@@ -7,19 +7,162 @@
     <title>Deerhack-2024</title>
     <link rel="icon" type="" href="./logo.png" />
 </head>
+<style>
+    :root {
+        font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        --primary: #6633CC;
+        --secondary: #F5C144;
+        --dark-purple: #110C24;
+        --violet: #241A4A;
+        --grape: #6633CC;
+        --purpures: #9D4BAD;
+        --saffron: #F5C144;
+        --magnolia: #FCF7FF;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .counter__side {
+        height: 100vh;
+        width: 50%;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 350px;
+        background: rgba(17, 12, 36, 0.8);
+        -webkit-backdrop-filter: blur(100px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
+    }
+
+    .logo__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .software__logo{
+        margin-right: 50px;
+    }
+
+    .counter__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        letter-spacing: 2px;
+        margin-top: -25px;
+    }
+
+    .timing__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: large;
+    }
+
+    .timing__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .timing__box__number {
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    .timing__box__text {
+        font-size: medium;
+        font-weight: normal;
+    }
+
+</style>
 
 <body style="background-image: url(./Hero.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;">
+    height: 100vh;">
 
+    <section class="counter__side">
+        <div class="logo__container">
+            <img src="./Software_Club.svg" class="software__logo" alt="">
+            <img src="./logo.svg" alt="">
+        </div>
+        <div class="counter__container">
+            <div class="timing__container">
+                <div class="timing__box">
+                    <div class="timing__box__number" style="color: var(--magnolia)">00:</div>
+                    <div class="timing__box__text" style="color: var(--magnolia)">Days</div>
+                </div>
+                <div class="timing__box">
+                    <div class="timing__box__number" style="color: var(--magnolia)">00:</div>
+                    <div class="timing__box__text" style="color: var(--magnolia)">Hours</div>
+                </div>
+                <div class="timing__box">
+                    <div class="timing__box__number" style="color: var(--magnolia)">00:</div>
+                    <div class="timing__box__text" style="color: var(--magnolia)">Minutes</div>
+                </div>
+                <div class="timing__box">
+                    <div class="timing__box__number" style="color: var(--magnolia)">00</div>
+                    <div class="timing__box__text" style="color: var(--magnolia)">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="login__side">
+
+    </section>
 </body>
 
 </html>
+<script>
+    const targetDate = new Date("2024-05-10T09:00:00").getTime();
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining <= 0) {
+            clearInterval(interval);
+            document.querySelector('.counter__container').textContent = 'Event Started';
+        } else {
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.querySelector('.timing__box__number').textContent = addLeadingZero(days) + ':';
+            document.querySelector('.timing__box__text').textContent = 'Days:';
+
+            document.querySelector('.timing__box:nth-child(2) .timing__box__number').textContent = addLeadingZero(hours) + ':';
+            document.querySelector('.timing__box:nth-child(2) .timing__box__text').textContent = 'Hours';
+
+            document.querySelector('.timing__box:nth-child(3) .timing__box__number').textContent = addLeadingZero(minutes) + ':';
+            document.querySelector('.timing__box:nth-child(3) .timing__box__text').textContent = 'Minutes';
+
+            document.querySelector('.timing__box:nth-child(4) .timing__box__number').textContent = addLeadingZero(seconds);
+            document.querySelector('.timing__box:nth-child(4) .timing__box__text').textContent = 'Seconds';
+        }
+    };
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function addLeadingZero(number) {
+        return number < 10 ? `0${number}` : number;
+    }
+</script>
