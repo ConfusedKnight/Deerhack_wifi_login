@@ -34,7 +34,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 350px;
+        padding: 350px 0px;
         background: rgba(17, 12, 36, 0.8);
         -webkit-backdrop-filter: blur(100px);
         backdrop-filter: blur(10px);
@@ -49,7 +49,7 @@
         margin-bottom: 50px;
     }
 
-    .software__logo{
+    .software__logo {
         margin-right: 50px;
     }
 
@@ -80,20 +80,175 @@
     .timing__box__number {
         font-size: 60px;
         font-weight: bold;
+        color: var(--magnolia);
     }
 
     .timing__box__text {
         font-size: medium;
         font-weight: normal;
+        color: var(--magnolia);
     }
 
+    .login__side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+    }
+
+    .login__container {
+        height: auto;
+        width: 60vh;
+        background: rgba(17, 12, 36, 0.8);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
+        padding: 70px;
+        border-radius: 15px;
+
+    }
+
+    .login__container form input {
+        width: 100%;
+        background-color: var(--violet);
+        color: var(--secondary);
+        padding: 13px;
+        border-radius: 15px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        outline: 2px solid var(--grape);
+        transition: all 0.1s ease-in-out;
+    }
+
+    .login__container form input:focus {
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+        transform: scale(1.02);
+        outline: 2px solid var(--secondary);
+    }
+
+    .login__container form button {
+        background-color: var(--saffron);
+        color: var(--dark-purple);
+        display: block;
+        padding: 13px;
+        border-radius: 15px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .login__container form button:hover {
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+        transform: scale(1.02);
+    }
+
+    label {
+        background: linear-gradient(to top, var(--secondary), var(--primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .counter__side {
+            width: 100%;
+            margin-top: -250px;
+            height: 0%;
+        }
+
+        .timing__box__number {
+            font-size: 20px;
+        }
+
+        .login__side {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .counter__side {
+            width: 100%;
+            margin-top: -250px;
+            height: 0%;
+        }
+
+        .timing__box__number {
+            font-size: 20px;
+        }
+
+        .login__side {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .counter__side {
+            width: 110%;
+            margin-top: -300px;
+            margin-bottom: 100px;
+        }
+
+        .timing__box__number {
+            font-size: 20px;
+        }
+
+        .login__side {
+            width: 110%;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .counter__side {
+            width: 130%;
+            margin-top: -300px;
+            margin-bottom: 100px;
+        }
+
+        .login__side {
+            width: 120%;
+            height: 60vh;
+            padding: 50px;
+        }
+
+        .login__container {
+            margin-left: 20px;
+        }
+
+        .label {
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .counter__side {
+            width: 150%;
+            margin-top: -300px;
+            margin-bottom: 100px;
+        }
+
+        .login__side {
+            width: 140%;
+        }
+
+    }
 </style>
 
 <body style="background-image: url(./Hero.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: left;
     height: 100vh;">
 
     <section class="counter__side">
@@ -104,28 +259,41 @@
         <div class="counter__container">
             <div class="timing__container">
                 <div class="timing__box">
-                    <div class="timing__box__number" style="color: var(--magnolia)">00:</div>
-                    <div class="timing__box__text" style="color: var(--magnolia)">Days</div>
+                    <div class="timing__box__number">00:</div>
+                    <div class="timing__box__text">Days</div>
                 </div>
                 <div class="timing__box">
-                    <div class="timing__box__number" style="color: var(--magnolia)">00:</div>
-                    <div class="timing__box__text" style="color: var(--magnolia)">Hours</div>
+                    <div class="timing__box__number">00:</div>
+                    <div class="timing__box__text">Hours</div>
                 </div>
                 <div class="timing__box">
-                    <div class="timing__box__number" style="color: var(--magnolia)">00:</div>
-                    <div class="timing__box__text" style="color: var(--magnolia)">Minutes</div>
+                    <div class="timing__box__number">00:</div>
+                    <div class="timing__box__text">Minutes</div>
                 </div>
                 <div class="timing__box">
-                    <div class="timing__box__number" style="color: var(--magnolia)">00</div>
-                    <div class="timing__box__text" style="color: var(--magnolia)">Seconds</div>
+                    <div class="timing__box__number">00</div>
+                    <div class="timing__box__text">Seconds</div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="login__side">
-
+        <div class="login__container">
+            <form>
+                <div class="input__container">
+                    <label class='label' for="username">Username</label>
+                    <input class='username' type="text" id="username">
+                </div>
+                <div class="input__container">
+                    <label class='label' for="password">Password</label>
+                    <input type="password" id="password" />
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
     </section>
+
 </body>
 
 </html>
