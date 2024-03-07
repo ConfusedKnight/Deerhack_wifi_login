@@ -8,6 +8,8 @@
     <link rel="icon" type="" href="./logo.png" />
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
     :root {
         font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
         --primary: #6633CC;
@@ -113,7 +115,8 @@
         width: 100%;
         background-color: var(--violet);
         color: var(--secondary);
-        padding: 13px;
+        padding: 15px;
+        border: var(--dark-purple);
         border-radius: 15px;
         font-size: 18px;
         letter-spacing: 1.5px;
@@ -136,8 +139,8 @@
         display: block;
         padding: 13px;
         border-radius: 15px;
-        font-size: 18px;
-        letter-spacing: 1.5px;
+        font-size: 20px;
+        letter-spacing: 1px;
         font-weight: bold;
         width: 100%;
         cursor: pointer;
@@ -156,7 +159,7 @@
         background-clip: text;
         color: transparent;
         font-size: 25px;
-        font-weight: bold;
+        font-weight: 500;
         margin-bottom: 50px;
     }
 
@@ -211,7 +214,8 @@
         .counter__side {
             width: 110%;
         }
-        .logo__container{
+
+        .logo__container {
             margin-top: 15px;
         }
 
@@ -225,7 +229,7 @@
     @media screen and (max-width: 320px) {
         .counter__side {
             width: 120%;
-            
+
         }
 
         .login__container {
@@ -238,12 +242,13 @@
 <body style="background-image: url(./Hero.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: left;
+    position: relative;
+    
     ">
 
     <section class="counter__side">
-        <div class="logo__container" >
+        <div class="logo__container">
             <img src="./Software_Club.svg" class="software__logo" alt="">
             <img src="./logo.svg" alt="">
         </div>
@@ -273,7 +278,7 @@
         <div class="login__container">
             <form>
                 <label class='label' for="username">Username</label>
-                <input class='username'type="text" autocapitalize="off" id="username">
+                <input class='username' type="text" autocapitalize="off" id="username">
 
                 <label class='label' for="password">Password</label>
                 <input type="password" autocapitalize="off" id="password" />
@@ -303,7 +308,7 @@
             const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
             document.querySelector('.timing__box__number').textContent = addLeadingZero(days) + ':';
-            document.querySelector('.timing__box__text').textContent = 'Days:';
+            document.querySelector('.timing__box__text').textContent = 'Days';
 
             document.querySelector('.timing__box:nth-child(2) .timing__box__number').textContent = addLeadingZero(hours) + ':';
             document.querySelector('.timing__box:nth-child(2) .timing__box__text').textContent = 'Hours';
