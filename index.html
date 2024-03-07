@@ -8,7 +8,7 @@
     <link rel="icon" type="" href="./logo.png" />
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
     :root {
         font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -39,7 +39,7 @@
         justify-content: center;
         background: rgba(17, 12, 36, 0.8);
         -webkit-backdrop-filter: blur(100px);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(9px);
         box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
     }
 
@@ -76,6 +76,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         margin: 10px;
     }
 
@@ -86,8 +87,6 @@
     }
 
     .timing__box__text {
-        font-size: medium;
-        font-weight: normal;
         color: var(--magnolia);
     }
 
@@ -105,7 +104,7 @@
         padding: 50px;
         background: rgba(17, 12, 36, 0.8);
         -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(9px);
         box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
         border-radius: 15px;
 
@@ -140,8 +139,7 @@
         padding: 13px;
         border-radius: 15px;
         font-size: 20px;
-        letter-spacing: 1px;
-        font-weight: bold;
+        font-weight: 600;
         width: 100%;
         cursor: pointer;
         margin-bottom: 2rem;
@@ -159,8 +157,22 @@
         background-clip: text;
         color: transparent;
         font-size: 25px;
-        font-weight: 500;
+        font-weight: 800;
         margin-bottom: 50px;
+    }
+
+    .timing__box__colon {
+        font-size: 50px;
+        font-weight: bold;
+        color: #FCF7FF;
+    }
+
+    .timing_box_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 
     @media screen and (max-width: 1024px) {
@@ -175,6 +187,19 @@
 
         .timing__box__number {
             font-size: 20px;
+        }
+
+        .timing__box__text {
+            font-size: 15px;
+            font-weight: 100;
+        }
+
+        .timing__box__colon {
+            font-size: 20px;
+        }
+
+        .logo__container {
+            margin-top: 15px;
         }
 
         .login__side {
@@ -215,26 +240,22 @@
             width: 110%;
         }
 
-        .logo__container {
-            margin-top: 15px;
-        }
-
         .login__container {
             width: 100%;
-            margin-left: 30px;
+            margin-left: 40px;
         }
     }
 
 
     @media screen and (max-width: 320px) {
         .counter__side {
-            width: 120%;
+            width: 130%;
 
         }
 
         .login__container {
             width: 110%;
-            margin-left: 60px;
+            margin-left: 95px;
         }
     }
 </style>
@@ -255,20 +276,35 @@
         <div class="counter__container">
             <div class="timing__container">
                 <div class="timing__box">
-                    <div class="timing__box__number">00:</div>
+                    <div class="timing_box_container">
+                        <div class="timing__box__number"></div>
+                        <div class="timing__box__colon">:</div>
+                    </div>
                     <div class="timing__box__text">Days</div>
                 </div>
+
                 <div class="timing__box">
-                    <div class="timing__box__number">00:</div>
+                    <div class="timing_box_container">
+                        <div class="timing__box__number"></div>
+                        <div class="timing__box__colon">:</div>
+                    </div>
                     <div class="timing__box__text">Hours</div>
                 </div>
+
                 <div class="timing__box">
-                    <div class="timing__box__number">00:</div>
+                    <div class="timing_box_container">
+                        <div class="timing__box__number"></div>
+                        <div class="timing__box__colon">:</div>
+                    </div>
                     <div class="timing__box__text">Minutes</div>
                 </div>
+
                 <div class="timing__box">
-                    <div class="timing__box__number">00</div>
-                    <div class="timing__box__text">Seconds</div>
+                    <div class="timing_box_container">
+                        <div class="timing__box__number"></div>
+                        <div class="timing__box__colon" style="display: none;">:</div>
+                    </div>
+                    <div class="timing__box__text"></div>
                 </div>
             </div>
         </div>
@@ -307,17 +343,19 @@
             const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            document.querySelector('.timing__box__number').textContent = addLeadingZero(days) + ':';
+            document.querySelector('.timing__box__number').textContent = addLeadingZero(days);
             document.querySelector('.timing__box__text').textContent = 'Days';
 
-            document.querySelector('.timing__box:nth-child(2) .timing__box__number').textContent = addLeadingZero(hours) + ':';
+
+            document.querySelector('.timing__box:nth-child(2) .timing__box__number').textContent = addLeadingZero(hours);
             document.querySelector('.timing__box:nth-child(2) .timing__box__text').textContent = 'Hours';
 
-            document.querySelector('.timing__box:nth-child(3) .timing__box__number').textContent = addLeadingZero(minutes) + ':';
+            document.querySelector('.timing__box:nth-child(3) .timing__box__number').textContent = addLeadingZero(minutes);
             document.querySelector('.timing__box:nth-child(3) .timing__box__text').textContent = 'Minutes';
 
             document.querySelector('.timing__box:nth-child(4) .timing__box__number').textContent = addLeadingZero(seconds);
             document.querySelector('.timing__box:nth-child(4) .timing__box__text').textContent = 'Seconds';
+
         }
     };
 
