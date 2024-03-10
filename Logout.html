@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deerhack-2024</title>
+    <link rel="icon" type="" href="./logo.png" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+    :root {
+        font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        --primary: #6633CC;
+        --secondary: #F5C144;
+        --dark-purple: #110C24;
+        --violet: #241A4A;
+        --grape: #6633CC;
+        --purpures: #9D4BAD;
+        --saffron: #F5C144;
+        --magnolia: #FCF7FF;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .background__side {
+        height: 100%;
+        background: rgba(17, 12, 36, 0.8);
+        -webkit-backdrop-filter: blur(100px);
+        backdrop-filter: blur(9px);
+        box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
+        padding-top: 150px;
+        padding-left: 250px;
+    }
+
+    .logo__container {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .text__container {
+        text-align: start;
+        color: white;
+        font-size: 24px;
+        margin-top: 4rem;
+    }
+
+    .button {
+        margin-top: 1rem;
+        background-color: var(--saffron);
+        color: var(--dark-purple);
+        display: block;
+        padding: 12px 46px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        width: 300px;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        border: none;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .button:hover {
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+        transform: scale(1.02);
+    }
+
+    @media screen and (max-width: 1024px){
+        .background__side {
+            padding-left: 20px;
+        }
+
+        
+    }
+
+    @media screen and (max-width: 768px) {
+        .background__side {
+            padding-top: 50px;
+            padding-left: 30px;
+        }
+
+        .text__container {
+            font-size: 20px;
+        }
+
+        .button {
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .background__side {
+            padding-top: 60px;
+        }
+
+
+        .text__container {
+            font-size: 16px;
+        }
+
+        .button {
+            width: 150px;
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
+    
+    @media screen and (max-width: 375px){
+
+
+        .background__side {
+            padding-top: 60px;
+        }
+
+
+        .text__container {
+            font-size: 14px;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+    }
+
+    @media screen and (max-width: 330px){
+        .background__side {
+            padding-top: 60px;
+        }
+
+        .logo__container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    }
+</style>
+
+<body style="background-image: url(./Hero.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    height: 100vh;
+    ">
+
+
+    <section class="background__side">
+        <div class="logo__container">
+            <img src="./Software_Club.svg" class="softwareClub" alt="">
+            <img src="./logo.svg" class="logo" alt="">
+        </div>
+        <div class="text__container">
+            <p>The browser is used to keep your authentication session active.</p>
+            <p>Please leave it open in the background and open a
+                <span><a style="color: #F5C144; text-decoration: underline;"
+                        href="https://stackoverflow.com/questions/44884990/opening-a-link-in-the-same-tab-with-html"
+                        target="_blank">
+                        new window
+                    </a>
+                </span>
+                to continue.
+            </p>
+            <br>
+            <p>Authentication refresh in <span style="color: #F5C144; font-style: italic; " class="counter">28679</span>
+                seconds.</p>
+            <br>
+
+            <button class="button" type="submit">
+                Log Out
+            </button>
+        </div>
+    </section>
+
+</body>
+
+</html>
