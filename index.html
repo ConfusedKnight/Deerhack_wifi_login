@@ -1,368 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deerhack-2024</title>
     <link rel="icon" type="" href="./logo.png" />
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 
     :root {
-        font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-        --primary: #6633CC;
-        --secondary: #F5C144;
-        --dark-purple: #110C24;
-        --violet: #241A4A;
-        --grape: #6633CC;
-        --purpures: #9D4BAD;
-        --saffron: #F5C144;
-        --magnolia: #FCF7FF;
+      font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial,
+        sans-serif;
+      --primary: #6633cc;
+      --secondary: #f5c144;
+      --dark-purple: #110c24;
+      --violet: #241a4a;
+      --grape: #6633cc;
+      --purpures: #9d4bad;
+      --saffron: #f5c144;
+      --magnolia: #fcf7ff;
     }
 
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-
     .counter__side {
-        height: 100vh;
-        width: 50%;
-        float: left;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: rgba(17, 12, 36, 0.8);
-        -webkit-backdrop-filter: blur(100px);
-        backdrop-filter: blur(9px);
-        box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
+      height: 100vh;
+      width: 50%;
+      float: left;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(17, 12, 36, 0.8);
+      -webkit-backdrop-filter: blur(100px);
+      backdrop-filter: blur(9px);
+      box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
     }
 
     .logo__container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
     }
 
     .software__logo {
-        margin-right: 50px;
+      margin-right: 50px;
     }
 
     .counter__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        letter-spacing: 2px;
-        margin-top: -25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      letter-spacing: 2px;
+      margin-top: -25px;
     }
 
     .timing__container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        font-size: large;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: large;
     }
 
     .timing__box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
     }
 
     .timing__box__number {
-        font-size: 60px;
-        font-weight: bold;
-        color: var(--magnolia);
+      font-size: 60px;
+      font-weight: bold;
+      color: var(--magnolia);
     }
 
     .timing__box__text {
-        color: var(--magnolia);
+      color: var(--magnolia);
     }
 
     .login__side {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
 
     .login__container {
-        height: auto;
-        width: 70%;
-        padding: 50px;
-        background: rgba(17, 12, 36, 0.8);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(9px);
-        box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
-        border-radius: 15px;
-
+      height: auto;
+      width: 70%;
+      padding: 50px;
+      background: rgba(17, 12, 36, 0.8);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(9px);
+      box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
+      border-radius: 15px;
     }
 
     .login__container form input {
-        width: 100%;
-        background-color: var(--violet);
-        color: var(--secondary);
-        padding: 15px;
-        border: var(--dark-purple);
-        border-radius: 15px;
-        font-size: 18px;
-        letter-spacing: 1.5px;
-        font-weight: bold;
-        margin-bottom: 2rem;
-        margin-top: 20px;
-        outline: 2px solid var(--grape);
-        transition: all 0.1s ease-in-out;
+      width: 100%;
+      background-color: var(--violet);
+      color: var(--secondary);
+      padding: 15px;
+      border: var(--dark-purple);
+      border-radius: 15px;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      margin-top: 20px;
+      outline: 2px solid var(--grape);
+      transition: all 0.1s ease-in-out;
     }
 
     .login__container form input:focus {
-        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
-        transform: scale(1.02);
-        outline: 2px solid var(--secondary);
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+      transform: scale(1.02);
+      outline: 2px solid var(--secondary);
     }
 
     .login__container form button {
-        background-color: var(--saffron);
-        color: var(--dark-purple);
-        display: block;
-        padding: 13px;
-        border-radius: 15px;
-        font-size: 20px;
-        font-weight: 600;
-        width: 100%;
-        cursor: pointer;
-        margin-bottom: 2rem;
-        transition: all 0.1s ease-in-out;
+      background-color: var(--saffron);
+      color: var(--dark-purple);
+      display: block;
+      padding: 13px;
+      border-radius: 15px;
+      font-size: 20px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: all 0.1s ease-in-out;
     }
 
     .login__container form button:hover {
-        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
-        transform: scale(1.02);
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+      transform: scale(1.02);
     }
 
     .label {
-        background: linear-gradient(to top, var(--secondary), var(--primary));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-size: 25px;
-        font-weight: 800;
-        margin-bottom: 50px;
+      background: linear-gradient(to top, var(--secondary), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 50px;
     }
 
     .timing__box__colon {
-        font-size: 50px;
-        font-weight: bold;
-        color: #FCF7FF;
+      font-size: 50px;
+      font-weight: bold;
+      color: #fcf7ff;
     }
 
     .timing_box_container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
     @media screen and (max-width: 1024px) {
-        .counter__side {
-            width: 100%;
-            height: 50%;
-        }
+      .counter__side {
+        width: 100%;
+        height: 50%;
+      }
 
-        .login__container {
-            width: 80%;
-        }
+      .login__container {
+        width: 80%;
+      }
 
-        .timing__box__number {
-            font-size: 20px;
-        }
+      .timing__box__number {
+        font-size: 20px;
+      }
 
-        .timing__box__text {
-            font-size: 15px;
-            font-weight: 100;
-        }
+      .timing__box__text {
+        font-size: 15px;
+        font-weight: 100;
+      }
 
-        .timing__box__colon {
-            font-size: 20px;
-        }
+      .timing__box__colon {
+        font-size: 20px;
+      }
 
-        .logo__container {
-            margin-top: 15px;
-        }
+      .logo__container {
+        margin-top: 15px;
+      }
 
-        .login__side {
-            width: 100%;
-        }
+      .login__side {
+        width: 100%;
+      }
     }
 
     @media screen and (max-width: 768px) {
-        .counter__side {
-            width: 100%;
-        }
+      .counter__side {
+        width: 100%;
+      }
 
-        .timing__box__number {
-            font-size: 20px;
-        }
+      .timing__box__number {
+        font-size: 20px;
+      }
 
-        .login__container {
-            width: 90%;
-        }
+      .login__container {
+        width: 90%;
+      }
     }
 
     @media screen and (max-width: 500px) {
-        .counter__side {
-            width: 100%;
-        }
+      .counter__side {
+        width: 100%;
+      }
 
-        .timing__box__number {
-            font-size: 20px;
-        }
+      .timing__box__number {
+        font-size: 20px;
+      }
 
-        .login__container {
-            width: 90%;
-        }
+      .login__container {
+        width: 90%;
+      }
     }
 
     @media screen and (max-width: 450px) {
-        .counter__side {
-            width: 110%;
-        }
+      .counter__side {
+        width: 110%;
+      }
 
-        .login__container {
-            width: 100%;
-            margin-left: 40px;
-        }
+      .login__container {
+        width: 100%;
+        margin-left: 40px;
+      }
     }
-
 
     @media screen and (max-width: 320px) {
-        .counter__side {
-            width: 130%;
+      .counter__side {
+        width: 130%;
+      }
 
-        }
-
-        .login__container {
-            width: 110%;
-            margin-left: 95px;
-        }
+      .login__container {
+        width: 110%;
+        margin-left: 95px;
+      }
     }
-</style>
+  </style>
 
-<body style="background-image: url(./Hero.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: left;
-    position: relative;
-    
-    ">
-
+  <body
+    style="
+      background-image: url('http://192.168.0.213/images/Hero.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left;
+      position: relative;
+    "
+  >
     <section class="counter__side">
-        <div class="logo__container">
-            <img src="./Software_Club.svg" class="software__logo" alt="">
-            <img src="./logo.svg" alt="">
-        </div>
-        <div class="counter__container">
-            <div class="timing__container">
-                <div class="timing__box">
-                    <div class="timing_box_container">
-                        <div class="timing__box__number"></div>
-                        <div class="timing__box__colon">:</div>
-                    </div>
-                    <div class="timing__box__text">Days</div>
-                </div>
-
-                <div class="timing__box">
-                    <div class="timing_box_container">
-                        <div class="timing__box__number"></div>
-                        <div class="timing__box__colon">:</div>
-                    </div>
-                    <div class="timing__box__text">Hours</div>
-                </div>
-
-                <div class="timing__box">
-                    <div class="timing_box_container">
-                        <div class="timing__box__number"></div>
-                        <div class="timing__box__colon">:</div>
-                    </div>
-                    <div class="timing__box__text">Minutes</div>
-                </div>
-
-                <div class="timing__box">
-                    <div class="timing_box_container">
-                        <div class="timing__box__number"></div>
-                        <div class="timing__box__colon" style="display: none;">:</div>
-                    </div>
-                    <div class="timing__box__text"></div>
-                </div>
+      <div class="logo__container">
+        <img src="%%IMAGE:Software_Club%%" class="software__logo" alt="" />
+        <img src="%%IMAGE:logo%%" alt="" />
+      </div>
+      <div class="counter__container">
+        <div class="timing__container">
+          <div class="timing__box">
+            <div class="timing_box_container">
+              <div class="timing__box__number"></div>
+              <div class="timing__box__colon">:</div>
             </div>
+            <div class="timing__box__text">Days</div>
+          </div>
+
+          <div class="timing__box">
+            <div class="timing_box_container">
+              <div class="timing__box__number"></div>
+              <div class="timing__box__colon">:</div>
+            </div>
+            <div class="timing__box__text">Hours</div>
+          </div>
+
+          <div class="timing__box">
+            <div class="timing_box_container">
+              <div class="timing__box__number"></div>
+              <div class="timing__box__colon">:</div>
+            </div>
+            <div class="timing__box__text">Minutes</div>
+          </div>
+
+          <div class="timing__box">
+            <div class="timing_box_container">
+              <div class="timing__box__number"></div>
+              <div class="timing__box__colon" style="display: none">:</div>
+            </div>
+            <div class="timing__box__text"></div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="login__side">
-        <div class="login__container">
-            <form>
-                <label class='label' for="username">Username</label>
-                <input class='username' type="text" autocapitalize="off" id="username">
+      <div class="login__container">
+        <form action="%%AUTH_POST_URL%%" method="post">
+          <label class="label" for="username">Username</label>
+          <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%" />
 
-                <label class='label' for="password">Password</label>
-                <input type="password" autocapitalize="off" id="password" />
+          <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%" />
+          <input
+            class="username"
+            name="%%USERNAMEID%%"
+            type="text"
+            autocapitalize="off"
+            id="username"
+          />
 
-                <button type="submit">Log In</button>
-            </form>
-        </div>
+          <label class="label" for="password">Password</label>
+          <input
+            type="password"
+            name="%%PASSWORDID%%"
+            autocapitalize="off"
+            id="password"
+            autocomplete="off"
+          />
+
+          <button type="submit" value="Login">Log In</button>
+
+          <div style="color: #c1c1c1; font-size: 12px">
+            If you're still having problem please contact your network
+            administrator.
+            <br />
+            Or contact us at _devops@deerwalk.edu.np
+            <br />
+
+            <br />
+            Powered by DWIT DevOps-Department
+          </div>
+        </form>
+      </div>
     </section>
-
-</body>
-
+  </body>
 </html>
 <script>
-    const targetDate = new Date("2024-05-10T09:00:00").getTime();
+  const targetDate = new Date("2024-05-10T09:00:00").getTime();
 
-    const updateCountdown = () => {
-        const now = new Date().getTime();
-        const timeRemaining = targetDate - now;
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const timeRemaining = targetDate - now;
 
-        if (timeRemaining <= 0) {
-            clearInterval(interval);
-            document.querySelector('.counter__container').textContent = 'Event Started';
-        } else {
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    if (timeRemaining <= 0) {
+      clearInterval(interval);
+      document.querySelector(".counter__container").textContent =
+        "Event Started";
+    } else {
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            document.querySelector('.timing__box__number').textContent = addLeadingZero(days);
-            document.querySelector('.timing__box__text').textContent = 'Days';
+      document.querySelector(".timing__box__number").textContent =
+        addLeadingZero(days);
+      document.querySelector(".timing__box__text").textContent = "Days";
 
+      document.querySelector(
+        ".timing__box:nth-child(2) .timing__box__number"
+      ).textContent = addLeadingZero(hours);
+      document.querySelector(
+        ".timing__box:nth-child(2) .timing__box__text"
+      ).textContent = "Hours";
 
-            document.querySelector('.timing__box:nth-child(2) .timing__box__number').textContent = addLeadingZero(hours);
-            document.querySelector('.timing__box:nth-child(2) .timing__box__text').textContent = 'Hours';
+      document.querySelector(
+        ".timing__box:nth-child(3) .timing__box__number"
+      ).textContent = addLeadingZero(minutes);
+      document.querySelector(
+        ".timing__box:nth-child(3) .timing__box__text"
+      ).textContent = "Minutes";
 
-            document.querySelector('.timing__box:nth-child(3) .timing__box__number').textContent = addLeadingZero(minutes);
-            document.querySelector('.timing__box:nth-child(3) .timing__box__text').textContent = 'Minutes';
-
-            document.querySelector('.timing__box:nth-child(4) .timing__box__number').textContent = addLeadingZero(seconds);
-            document.querySelector('.timing__box:nth-child(4) .timing__box__text').textContent = 'Seconds';
-
-        }
-    };
-
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    function addLeadingZero(number) {
-        return number < 10 ? `0${number}` : number;
+      document.querySelector(
+        ".timing__box:nth-child(4) .timing__box__number"
+      ).textContent = addLeadingZero(seconds);
+      document.querySelector(
+        ".timing__box:nth-child(4) .timing__box__text"
+      ).textContent = "Seconds";
     }
+  };
+
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  function addLeadingZero(number) {
+    return number < 10 ? `0${number}` : number;
+  }
 </script>
