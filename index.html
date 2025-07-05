@@ -47,11 +47,11 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-bottom: 50px;
+      margin-bottom: -15px;
     }
 
     .software__logo {
-      margin-right: 50px;
+      margin-right: 0px;
     }
 
     .counter__container {
@@ -61,7 +61,7 @@
       align-items: center;
       padding: 20px;
       letter-spacing: 2px;
-      margin-top: -25px;
+      margin-bottom: 55px;
     }
 
     .timing__container {
@@ -95,39 +95,40 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      margin-top: 15vh;
     }
 
     .login__container {
       height: auto;
-      width: 70%;
+      width: 414px;
       padding: 50px;
-      background: rgba(17, 12, 36, 0.8);
+      background: rgba(17, 12, 36, 0.7);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(9px);
-      box-shadow: 0 8px 32px 0 rgba(17, 12, 36, 0.8);
       border-radius: 15px;
     }
 
     .login__container form input {
       width: 100%;
-      background-color: var(--violet);
+      height: 47px;
+      background-color: rgba(17, 12, 36, 0.9);
       color: var(--secondary);
       padding: 15px;
-      border: var(--dark-purple);
-      border-radius: 15px;
+      border: #6633CC;
+      border-radius: 8px;
       font-size: 18px;
       letter-spacing: 1.5px;
       font-weight: bold;
       margin-bottom: 2rem;
-      margin-top: 20px;
-      outline: 2px solid var(--grape);
+      margin-top: 15px;
+      outline: 3px solid var(--grape);
       transition: all 0.1s ease-in-out;
     }
 
     .login__container form input:focus {
       box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
       transform: scale(1.02);
-      outline: 2px solid var(--secondary);
+      outline: 3px solid var(--secondary);
     }
 
     .login__container form button {
@@ -135,7 +136,7 @@
       color: var(--dark-purple);
       display: block;
       padding: 13px;
-      border-radius: 15px;
+      border-radius: 12px;
       font-size: 20px;
       font-weight: 600;
       width: 100%;
@@ -154,7 +155,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: 800;
       margin-bottom: 50px;
     }
@@ -197,73 +198,283 @@
       }
 
       .logo__container {
-        margin-top: 15px;
+        margin-top: 0px;
       }
 
       .login__side {
-        width: 100%;
+        width: 80%;
       }
     }
+
+    @media screen and (max-width: 850px) {
+      .counter__side {
+        width: 110%;
+      }
+
+      .login__container {
+        width: 293px;
+        height: 293px;
+        margin-left: 80px;
+        padding-left: 35px;
+        font-size: 14px;
+      }
+
+      .login__container form input {
+        width: 224px;
+        height: 33px;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+      }
+
+      .login__container form button {
+        width: 224px;
+        height: 33px;
+        margin-top: 0.9rem;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8.14px;
+      }
+
+      .login__side{
+        margin-top: -19vh;
+        margin-left: 5vw;
+      }
+
+      .logo__container{
+        margin-left: 80px;
+        width: 186.2px;
+      }
+
+      .counter__container{
+        margin-left: 80px;
+      }
+
+      .label{
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
+    }
+
 
     @media screen and (max-width: 768px) {
       .counter__side {
-        width: 100%;
-      }
-
-      .timing__box__number {
-        font-size: 20px;
+        width: 110%;
       }
 
       .login__container {
-        width: 90%;
+        width: 293px;
+        height: 293px;
+        margin-left: 10vw;
+        padding-left: 35px;
+        font-size: 14px;
       }
+
+      .login__container form input {
+        width: 224px;
+        height: 33px;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+      }
+
+      .login__container form button {
+        width: 224px;
+        height: 33px;
+        margin-top: 0.9rem;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8.14px;
+      }
+
+      .login__side{
+        margin-top: -15vh;
+        margin-left: 0vw;
+      }
+
+      .logo__container{
+        margin-left: 80px;
+        width: 186.2px;
+      }
+
+      .counter__container{
+        margin-left: 80px;
+      }
+
+      .label{
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
     }
 
     @media screen and (max-width: 500px) {
-      .counter__side {
-        width: 100%;
-      }
-
-      .timing__box__number {
-        font-size: 20px;
+     .counter__side {
+        width: 110%;
       }
 
       .login__container {
-        width: 90%;
+        width: 293px;
+        height: 293px;
+        margin-left: 80px;
+        padding-left: 35px;
+        font-size: 14px;
       }
+
+      .login__container form input {
+        width: 224px;
+        height: 33px;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+      }
+
+      .login__container form button {
+        width: 224px;
+        height: 33px;
+        margin-top: 0.9rem;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8.14px;
+      }
+
+      .login__side{
+        margin-top: -10vh;
+      }
+
+      .logo__container{
+        margin-left: 80px;
+        width: 186.2px;
+      }
+
+      .counter__container{
+        margin-left: 80px;
+      }
+
+      .label{
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
     }
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 380px) {
       .counter__side {
         width: 110%;
       }
 
       .login__container {
-        width: 100%;
-        margin-left: 40px;
+        width: 293px;
+        height: 293px;
+        margin-left: 80px;
+        padding-left: 35px;
+        font-size: 14px;
       }
+
+      .login__container form input {
+        width: 224px;
+        height: 33px;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+      }
+
+      .login__container form button {
+        width: 224px;
+        height: 33px;
+        margin-top: 0.9rem;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8.14px;
+      }
+
+      .login__side{
+        margin-top: 5vh;
+      }
+
+      .logo__container{
+        margin-left: 21vw;
+        width: 186.2px;
+      }
+
+      .counter__container{
+        margin-left: 80px;
+      }
+
+      .label{
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
     }
 
-    @media screen and (max-width: 320px) {
-      .counter__side {
-        width: 130%;
+    @media screen and (max-width: 315px) {
+     .counter__side {
+        width: 110%;
       }
 
       .login__container {
-        width: 110%;
-        margin-left: 95px;
+        width: 293px;
+        height: 293px;
+        margin-left: 80px;
+        padding-left: 35px;
+        font-size: 14px;
+      }
+
+      .login__container form input {
+        width: 224px;
+        height: 33px;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+      }
+
+      .login__container form button {
+        width: 224px;
+        height: 33px;
+        margin-top: 0.9rem;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8.14px;
+      }
+
+      .login__side{
+        margin-top: -10vh;
+      }
+
+      .logo__container{
+        margin-left: 80px;
+        width: 186.2px;
+      }
+
+      .counter__container{
+        margin-left: 80px;
+      }
+
+      .label{
+        font-size: 14px;
+        margin-bottom: 30px;
       }
     }
 
     @media screen and (max-width: 310px) {
         .counter__side {
             width: 130%;
-
         }
 
         .login__container {
             width: 110%;
             margin-left: 95px;
+        }
+
+        .login__side{
+            margin-top: 0vh;
         }
         
     }
@@ -283,27 +494,31 @@
 
 </style>
 
-<body style="background-image: url(./Hero.webp);
+<body style="background-image: url(./backgroundimage.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
     position: relative;
+    height: 100vh;
     
     ">
 
-  <body
-    style="
-      background-image: url('http://192.168.0.213/images/Hero.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: left;
-      position: relative;
-    "
-  >
-    <section class="counter__side">
-      <div class="logo__container">
-        <img src="%%IMAGE:Software_Club%%" class="software__logo" alt="" />
-        <img src="%%IMAGE:logo%%" alt="" />
+  <!-- <body -->
+  <!--   style=" -->
+  <!--     background-image: url('http://192.168.0.213/images/Hero.png'); -->
+  <!--     background-size: cover; -->
+  <!--     background-repeat: no-repeat; -->
+  <!--     background-position: left; -->
+  <!--     position: relative; -->
+  <!--   " -->
+  <!-- > -->
+    <!-- <section class="counter__side"> -->
+    <!--      </section> -->
+
+    <section class="login__side">
+     <div class="logo__container">
+        <img src="herologo.png" class="software__logo" alt="" />
+        <!-- <img src="%%IMAGE:logo%%" alt="" /> -->
       </div>
       <div class="counter__container">
         <div class="timing__container">
@@ -340,9 +555,7 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="login__side">
       <div class="login__container">
         <form action="%%AUTH_POST_URL%%" method="post">
           <label class="label" for="username">Username</label>
@@ -368,23 +581,13 @@
 
           <button type="submit" value="Login">Log In</button>
 
-          <div style="color: #c1c1c1; font-size: 12px">
-            If you're still having problem please contact your network
-            administrator.
-            <br />
-            Or contact us at _devops@deerwalk.edu.np
-            <br />
-
-            <br />
-            Powered by DWIT DevOps-Department
-          </div>
         </form>
       </div>
     </section>
   </body>
 </html>
 <script>
-  const targetDate = new Date("2024-05-10T09:00:00").getTime();
+  const targetDate = new Date("July 11, 2025 14:00:00").getTime();
 
   const updateCountdown = () => {
     const now = new Date().getTime();

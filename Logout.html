@@ -53,10 +53,10 @@
     .button {
       margin-top: 1rem;
       background-color: var(--saffron);
-      color: var(--dark-purple);
+      color: black;
       display: block;
       padding: 12px 46px;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 20px;
       font-weight: 600;
       width: 175px;
@@ -142,7 +142,7 @@
 
   <body
     style="
-      background-image: url('http://192.168.0.213/images/Hero.png');
+      background-image: url('./backgroundimage.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: left;
@@ -152,8 +152,7 @@
   >
     <section class="background__side">
       <div class="logo__container">
-        <img src="%%IMAGE:Software_Club%%" class="softwareClub" alt="" />
-        <img src="%%IMAGE:logo%%" class="logo" alt="" />
+        <img src="herologo.png" class="software__logo" alt="" />
       </div>
       <form class="text__container">
         <p>The browser is used to keep your authentication session active.</p>
@@ -178,14 +177,14 @@
             style="color: #f5c144; font-style: italic"
             class="counter"
           >
-            %%TIMEOUT%%
+          %%TIMEOUT%% 
           </span>
           seconds.
         </p>
         <br />
         <p>
           <button class="button">
-            <a style="text-decoration: none" href="%%AUTH_LOGOUT%%">
+            <a style="color: black; text-decoration: none;" href="%%AUTH_LOGOUT%%">
               Log Out
             </a>
           </button>
@@ -194,14 +193,14 @@
       </form>
 
       <script>
-        var countDownTime=%%TIMEOUT%% + 1;
+        var countDownTime=%%TIMEOUT%%+ 1;
         function countDown(){
           countDownTime--;
           if (countDownTime <= 0){
             location.href="%%KEEPALIVEURL%%";
             return;
           }
-          document.getElementById('countdown').innerHTML = countDownTime;
+          document.getElementById('countdown').innerHTML= countDownTime;
           counter=setTimeout("countDown()", 1000);
         }
         function startit(){
